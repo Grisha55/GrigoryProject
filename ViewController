@@ -1,0 +1,243 @@
+import UIKit
+
+// Создаем константы
+let label = UILabel()
+let textField1 = UITextField()
+let textField2 = UITextField()
+let textField3 = UITextField()
+let stackViewTF = UIStackView()
+let label1 = UILabel()
+let label2 = UILabel()
+let label3 = UILabel()
+let stackViewLabel = UIStackView()
+let buttonSnigenie = UIButton()
+let buttonNorma = UIButton()
+let buttonNabor = UIButton()
+let resultLabel = UILabel()
+let buttonNext = UIButton()
+
+
+
+class ViewController: UIViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        view.addSubview(buttonNext)
+        buttonNext.setTitle("Далее", for: .normal)
+        buttonNext.backgroundColor = .yellow
+        buttonNext.setTitleColor(.black, for: .normal)
+        
+        buttonNext.translatesAutoresizingMaskIntoConstraints = false
+        buttonNext.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -50).isActive = true
+        buttonNext.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        buttonNext.heightAnchor.constraint(equalToConstant: 50).isActive = true
+        buttonNext.centerXAnchor.constraint(equalTo: self.view.centerXAnchor, constant: 0).isActive = true
+        
+        
+        view.addSubview(buttonSnigenie)
+        view.addSubview(buttonNorma)
+        view.addSubview(buttonNabor)
+        
+        buttonSnigenie.backgroundColor = .yellow
+        buttonSnigenie.setTitle("Снижение", for: .normal)
+        buttonSnigenie.setTitleColor(.black, for: .normal)
+        
+        buttonSnigenie.translatesAutoresizingMaskIntoConstraints = false
+        buttonSnigenie.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 10).isActive = true
+        buttonSnigenie.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        buttonSnigenie.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        buttonSnigenie.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -280).isActive = true
+        
+        buttonNorma.backgroundColor = .yellow
+        buttonNorma.setTitle("Норма", for: .normal)
+        buttonNorma.setTitleColor(.black, for: .normal)
+        
+        buttonNorma.translatesAutoresizingMaskIntoConstraints = false
+        buttonNorma.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        buttonNorma.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        buttonNorma.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        buttonNorma.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -280).isActive = true
+        
+        buttonNabor.backgroundColor = .yellow
+        buttonNabor.setTitle("Набор", for: .normal)
+        buttonNabor.setTitleColor(.black, for: .normal)
+        
+        buttonNabor.translatesAutoresizingMaskIntoConstraints = false
+        buttonNabor.widthAnchor.constraint(equalToConstant: 100).isActive = true
+        buttonNabor.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        buttonNabor.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -280).isActive = true
+        buttonNabor.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -10).isActive = true
+        
+        view.addSubview(resultLabel)
+        resultLabel.isHidden = true
+        resultLabel.textColor = .black
+        resultLabel.font = resultLabel.font.withSize(20)
+        resultLabel.textAlignment = .center
+        
+        resultLabel.translatesAutoresizingMaskIntoConstraints = false
+        resultLabel.widthAnchor.constraint(equalToConstant: 400).isActive = true
+        resultLabel.heightAnchor.constraint(equalToConstant: 40).isActive = true
+        resultLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        resultLabel.topAnchor.constraint(equalTo: buttonNorma.bottomAnchor, constant: 40).isActive = true
+        
+        
+        
+        
+        
+        view.backgroundColor = .green
+        
+        view.addSubview(label1)
+        view.addSubview(label2)
+        view.addSubview(label3)
+        view.addSubview(stackViewLabel)
+        
+        view.addSubview(textField1)
+        view.addSubview(textField2)
+        view.addSubview(textField3)
+        
+        textField1.translatesAutoresizingMaskIntoConstraints = false
+        textField1.backgroundColor = .gray
+        textField1.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        textField1.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        
+        textField2.translatesAutoresizingMaskIntoConstraints = false
+        textField2.backgroundColor = .gray
+        textField2.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        textField2.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        
+        textField3.translatesAutoresizingMaskIntoConstraints = false
+        textField3.backgroundColor = .gray
+        textField3.widthAnchor.constraint(equalToConstant: 50).isActive = true
+        textField3.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        
+        label1.translatesAutoresizingMaskIntoConstraints = false
+        label1.text = "Возраст"
+        label1.widthAnchor.constraint(equalToConstant: 80).isActive = true
+        label1.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        
+        label2.translatesAutoresizingMaskIntoConstraints = false
+        label2.text = "Рост"
+        label2.widthAnchor.constraint(equalToConstant: 80).isActive = true
+        label2.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        
+        label3.translatesAutoresizingMaskIntoConstraints = false
+        label3.text = "Вес"
+        label3.widthAnchor.constraint(equalToConstant: 80).isActive = true
+        label3.heightAnchor.constraint(equalToConstant: 30).isActive = true
+        
+
+        
+        
+        
+        
+        view.addSubview(label)
+        
+        label.text = "Hello user"
+        
+        
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 20).isActive = true
+        label.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        label.font = label.font.withSize(30)
+        
+        
+        
+        
+        view.addSubview(stackViewTF)
+        stackViewTF.addArrangedSubview(textField1)
+        stackViewTF.addArrangedSubview(textField2)
+        stackViewTF.addArrangedSubview(textField3)
+        stackViewTF.alignment = .center
+        stackViewTF.axis = .vertical
+        stackViewTF.distribution = .fillEqually
+        stackViewTF.spacing = 20
+        
+        
+        stackViewTF.translatesAutoresizingMaskIntoConstraints = false
+        stackViewTF.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 50).isActive = true
+        stackViewTF.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -450).isActive = true
+        stackViewTF.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -30).isActive = true
+        stackViewTF.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 200).isActive = true
+        
+        stackViewLabel.addArrangedSubview(label1)
+        stackViewLabel.addArrangedSubview(label2)
+        stackViewLabel.addArrangedSubview(label3)
+        stackViewLabel.alignment = .center
+        stackViewLabel.axis = .vertical
+        stackViewLabel.distribution = .fillEqually
+        stackViewLabel.spacing = 20
+        
+        stackViewLabel.translatesAutoresizingMaskIntoConstraints = false
+        stackViewLabel.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 30).isActive = true
+        stackViewLabel.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -200).isActive = true
+        stackViewLabel.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 50).isActive = true
+        stackViewLabel.bottomAnchor.constraint(equalTo: self.view.bottomAnchor, constant: -450).isActive = true
+        
+        
+        buttonSnigenie.addTarget(self, action: #selector(didButtonSnigenieClick), for: .touchUpInside)
+        buttonNorma.addTarget(self, action: #selector(didButtonNormaClick), for: .touchUpInside)
+        buttonNabor.addTarget(self, action: #selector(didButtonNaborClick), for: .touchUpInside)
+        
+        buttonNext.addTarget(self, action: #selector(didButtonNext), for: .touchUpInside)
+        
+        
+        
+        
+        
+    }
+    @objc func didButtonNext(_ sender: UIButton){
+        let secondVC: UIViewController = UIViewController()
+        self.present(secondVC, animated: true, completion: nil)
+    }
+    
+    @objc func didButtonSnigenieClick(_ sender: UIButton){
+        let vozrast:Int? = Int(textField1.text!)
+        let rost:Int? = Int(textField2.text!)
+        let ves:Int? = Int(textField3.text!)
+        guard let vozrast1 = vozrast else { return }
+        guard let rost1 = rost else { return }
+        guard let ves1 = ves else { return }
+        
+        let first = Double(10 * ves1)
+        let second = 6.25 * Double(rost1)
+        let third = Double(5 * vozrast1)
+        
+        let formula = Double(first + second - third + 500)
+        resultLabel.isHidden = false
+        resultLabel.text = "Вам необходимо \(formula) кКал в день"
+    }
+    @objc func didButtonNormaClick(_ sender: UIButton){
+        let vozrast:Int? = Int(textField1.text!)
+        let rost:Int? = Int(textField2.text!)
+        let ves:Int? = Int(textField3.text!)
+        guard let vozrast1 = vozrast else { return }
+        guard let rost1 = rost else { return }
+        guard let ves1 = ves else { return }
+        
+        let first = Double(10 * ves1)
+        let second = 6.25 * Double(rost1)
+        let third = Double(5 * vozrast1)
+        
+        let formula = Double(first + second - third + 1000)
+        resultLabel.isHidden = false
+        resultLabel.text = "Вам необходимо \(formula) кКал в день"
+    }
+    @objc func didButtonNaborClick(_ sender: UIButton){
+        let vozrast:Int? = Int(textField1.text!)
+        let rost:Int? = Int(textField2.text!)
+        let ves:Int? = Int(textField3.text!)
+        guard let vozrast1 = vozrast else { return }
+        guard let rost1 = rost else { return }
+        guard let ves1 = ves else { return }
+        
+        let first = Double(10 * ves1)
+        let second = 6.25 * Double(rost1)
+        let third = Double(5 * vozrast1)
+        
+        let formula = Double(first + second - third + 1500)
+        resultLabel.isHidden = false
+        resultLabel.text = "Вам необходимо \(formula) кКал в день"
+    }
+    
+}
+
